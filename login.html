@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tutoroot-tech</title>
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/index.min.css" />
+    <!--jquery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="styles/custom.css">
+
+</head>
+
+<body class="overflow-hidden overflow-y-scroll">
+    <!--menu popup-->
+    <section id="menu" class="fixed top-0 bottom-0 z-30 w-full h-screen bg-[#f6841f]" style="display: none;">
+        <div class="flex items-center justify-between absolute w-full p-6 ">
+            <div>
+                <a class="text-3xl font-bold text-gray-900" href="index.html">tutoroot-tech</a>
+            </div>
+            <div class="flex items-center space-x-2">
+                <button type="button" onclick="myFunction()"
+                    class="font-sans text-md font-semibold text-white flex items-center">
+                    <p class="mr-6 hidden lg:block">Close</p>
+                    <img class="h-12" src="img/logo_icon.png" alt="">
+
+                </button>
+            </div>
+        </div>
+
+        <div class="lg:grid lg:grid-cols-2 lg:gap-4">
+            <div class="flex justify-center mt-48 top_animation1">
+                <ul class="text-center space-y-2">
+                    <li class="p-3 cursor-pointer text-4xl font-semibold text-white">
+                        <a href="index.html">Home</a>
+                    </li>
+                    <li class="p-3 cursor-pointer text-4xl font-semibold text-white">
+                        <a href="about.html">About</a>
+                    </li>
+                    <li class="p-3 cursor-pointer text-4xl font-semibold text-white">
+                        <a class="collapsible">Course</a>
+                        <div class="content overflow-hidden">
+                            <ul class="space-y-2 mt-4">
+                                <li class="text-xl font-semibold text-white"><a href="fullstack.html">Fullstack</a></li>
+                                <li class="text-xl font-semibold text-white"><a href="#">Data Science</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="p-3 cursor-pointer text-4xl font-semibold text-white">
+                        <a href="contact.html">Contact</a>
+                    </li>
+                    <li class="p-3 cursor-pointer text-xl font-base text-white rounded border bg-gray-900">
+                      <a href="dashboard.html">Login / Signup</a>
+                  </li>
+                </ul>
+            </div>
+            <div class="right_animation1 hidden lg:block">
+                <img class="bg-cover bg-no-repeat bg-center"
+                    src="https://coachfocus.qodeinteractive.com/wp-content/uploads/2022/07/full-sc-menu-1.jpg" alt="">
+            </div>
+        </div>
+    </section>
+    <!--end menu popup-->
+
+
+    <!--header-->
+    <nav class="absolute z-20 w-full top-0 p-6 flex items-center justify-between">
+        <a class="text-3xl font-bold text-white" href="index.html"><img class="h-16" src="img/logo.png"/></a>
+        <button type="button" onclick="openMenu()" class="font-sans text-md font-semibold text-white flex items-center">
+            <p class="mr-6 hidden lg:block">Menu</p>
+            <img class="h-12" src="img/logo_icon.png" alt="">
+
+        </button>
+    </nav>
+
+    <div class="flex  items-center h-screen overflow-hidden">
+        <div class="lg:w-1/2 max-w-xl mx-auto p-10">
+            <h1 class="text-2xl font-semibold text-gray-900">
+                Login
+            </h1>
+           
+
+                <div class="mt-5 lg:mt-8 space-y-5">
+                    <form action="">
+                        <div class="space-y-2">
+                            <input class="w-full border-b outline-none focus:outline-none p-3 rounded" type="text" placeholder="Name">
+                            <input class="w-full border-b outline-none focus:outline-none p-3 rounded" type="text" placeholder="Email">
+                        </div> 
+                        <br> 
+                        <div class="flex items-center justify-between">
+                            <p class="flex items-center space-x-2 text-sm text-gray-500">
+                                <input id="check" class="h-4 w-4" type="checkbox">
+                                <label class="cursor-pointer" for="check">Keep me logged in</label>
+                            </p>
+                            <p><a href="" class="text-sm text-gray-500 py-5">Forgot your password?</a></p>
+                        </div>
+                        <br> 
+                        <button class="right_animation2 
+                            px-5 lg:mt-0 
+                            rounded-full border border-gray-900 
+                            p-2 font-semibold flex items-center 
+                            space-x-3 text-gray-900 
+                            font-sans left
+                                ">
+                            <a href="">Login</a>
+                            <span>
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 text-gray-900">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75"></path>
+                                </svg>
+                            </span>
+                        </button>
+                        <p class="mt-5 text-sm text-gray-500">Not registered yet?<a href="signup.html" class="text-blue-500"> Create an account</a></p>
+                    </form>
+                </div>
+
+        </div>
+        <div class="lg:w-1/2 hidden lg:block">
+            <img class="bg-cover bg-no-repeat bg-center"
+                src="img/signup.png" alt="">
+        </div>
+        
+        
+    </div>
+
+    <script src="js/custom.js"></script>
+
+    <!--collapse course-->
+    <script>
+        var coll = document.getElementsByClassName("collapsible");
+        var i;
+
+        for (i = 0; i < coll.length; i++) {
+            coll[i].addEventListener("click", function () {
+                this.classList.toggle("active");
+                var content = this.nextElementSibling;
+                if (content.style.maxHeight) {
+                    content.style.maxHeight = null;
+                } else {
+                    content.style.maxHeight = content.scrollHeight + "px";
+                }
+            });
+        }
+    </script>
+    <!--end collapse course-->
+
+    <!--login signup tabs script-->
+    <script>
+        function openCity(evt, cityName) {
+          var i, tabcontent, tablinks;
+          tabcontent = document.getElementsByClassName("tabcontent");
+          for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+          }
+          tablinks = document.getElementsByClassName("tablinks");
+          for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+          }
+          document.getElementById(cityName).style.display = "block";
+          evt.currentTarget.className += " active";
+        }
+        
+        // Get the element with id="defaultOpen" and click on it
+        document.getElementById("defaultOpen").click();
+        </script>
+    <!--end login signup tabs script-->
+
+
+
+</body>
+
+</html>
